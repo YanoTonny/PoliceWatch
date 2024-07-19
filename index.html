@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Police Accountability Platform - Kenya</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Police Accountability Platform - Kenya</h1>
+    </header>
+    <main>
+      <section id="authentication">
+        <h2>Login/Register</h2>
+        <form id="authForm" action="/auth" method="POST">
+          <label for="username">Email:</label>
+          <input type="email" id="username" name="username" required />
+
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+
+          <button type="submit">Login</button>
+        </form>
+        <button id="toggleAuthMode">Switch to Register</button>
+      </section>
+
+      <section id="report-incident" style="display: none">
+        <h2>Report an Incident</h2>
+        <form id="reportForm" action="/report" method="POST" enctype="multipart/form-data">
+          <label for="description">Description:</label>
+          <textarea id="description" name="description" required></textarea>
+
+          <label for="location">Location:</label>
+          <input type="text" id="location" name="location" required />
+
+          <label for="file">Upload Evidence (photo/video):</label>
+          <input type="file" id="file" name="file" accept="image/*,video/*" />
+
+          <button type="submit">Submit Report</button>
+        </form>
+      </section>
+
+      <section id="dashboard" style="display: none">
+        <h2>Incident Dashboard</h2>
+        <div id="incidentList"></div>
+        <button id="callAmbulance">Call Ambulance</button>
+      </section>
+    </main>
+    <script src="scripts.js"></script>
+  </body>
+</html>
