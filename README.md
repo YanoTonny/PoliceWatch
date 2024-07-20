@@ -1,8 +1,10 @@
 # PoliceWatch
-Police Accountability Web Application
+Police Accountability Web Application.
+
 This project is a web application aimed at providing a platform for users to report incidents related to police accountability. The application allows users to register, log in, submit reports, and view reports. The backend is built using Node.js and Express, and it uses MongoDB as the database.
 
-Table of Contents
+#Table of Contents
+
 Features
 Installation
 Configuration
@@ -11,51 +13,53 @@ Routes
 Technologies Used
 Contributing
 License
-Features
+
+#Features
 User registration and login
 Submit reports with description, location, and file uploads
 View a list of submitted reports
 Delete reports (only by the user who submitted them)
 Call ambulance service functionality
-Installation
+
+#Installation
 Clone the repository:
 
-sh
-Copy code
 git clone https://github.com/yourusername/police-accountability-app.git
 cd police-accountability-app
+
 Install dependencies:
 
-sh
-Copy code
 npm install
+
 Set up MongoDB:
 
 Sign up for MongoDB Atlas (if you haven't already) and create a new cluster.
 In the cluster, create a new database and a collection.
 Obtain the MongoDB connection string.
+
 Configure environment variables:
 
 Create a .env file in the root directory and add the following variables:
 makefile
-Copy code
+
 MONGODB_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret
 PORT=3000
-Configuration
+
+#Configuration
 Multer: Multer is used for handling file uploads.
 JWT: JSON Web Tokens are used for authentication.
 Bcrypt: Bcrypt is used for hashing passwords.
-Usage
+
+#Usage
 Start the server:
 
-sh
-Copy code
 npm start
 Open the frontend:
 
 Open index.html in your browser or use a live server extension in VSCode to serve the HTML file.
-Routes
+
+#Routes
 Authentication
 POST /auth/register: Register a new user
 
@@ -76,14 +80,18 @@ Response: Array of report objects
 DELETE /report/:id: Delete a report by ID
 
 Response: Report deleted
-Technologies Used
+
+
+#Technologies Used
 Frontend: HTML, CSS, JavaScript
 Backend: Node.js, Express
 Database: MongoDB (using Mongoose)
 Authentication: JWT
 File Uploads: Multer
-Contributing
+
+
+#Contributing
 Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
 
-License
+#License
 This project is licensed under the MIT License. See the LICENSE file for more details.
