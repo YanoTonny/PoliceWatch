@@ -83,6 +83,7 @@ Response: Report deleted
 
 
 #Technologies Used
+
 Frontend: HTML, CSS, JavaScript
 Backend: Node.js, Express
 Database: MongoDB (using Mongoose)
@@ -91,7 +92,9 @@ File Uploads: Multer
 
 
 #Contributing
+
 Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
 
 #License
+
 This project is licensed under the MIT License. See the LICENSE file for more details.
