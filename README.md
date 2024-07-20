@@ -24,8 +24,7 @@ Call ambulance service functionality
 #Installation
 Clone the repository:
 
-git clone https://github.com/yourusername/police-accountability-app.git
-cd police-accountability-app
+git clone git@github.com:YanoTonny/PoliceWatch.git
 
 Install dependencies:
 
