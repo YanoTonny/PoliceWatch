@@ -86,6 +86,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (response.ok) {
         loadReports();
+        // Clear the form after successful submission
+      reportForm.reset();
+      document.getElementById('file').value = ''; // Clear file input field
       } else {
         const error = await response.text();
         console.error(error);
@@ -125,6 +128,8 @@ document.addEventListener('DOMContentLoaded', () => {
             <p><strong>Description:</strong> ${report.description}</p>
             <p><strong>Location:</strong> ${report.location}</p>
             <p><strong>Reported by:</strong> ${report.userId}</p>
+            <p><strong>Created At:</strong> ${new Date(report.createdAt).toLocaleString()}</p>
+          
             ${report.userId === currentUser.id ? '<button onclick="deleteReport(\'' + report.id + '\')">Delete</button>' : ''}
           `;
           incidentList.appendChild(reportItem);
@@ -144,10 +149,16 @@ document.addEventListener('DOMContentLoaded', () => {
   window.deleteReport = async function (reportId) {
     try {
       const response = await fetch(`http://localhost:3000/report/${reportId}`, {
-        method: 'DELETE'
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${currentUser.token}` // If using JWT tokens
+        },
+        
       });
 
       if (response.ok) {
+        console.log('Report deleted successfully');
         loadReports();
       } else {
         const error = await response.text();
