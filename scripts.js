@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
   async function loadReports() {
     incidentList.innerHTML = '';
     try {
-      const response = await fetch('/reports');
+      const response = await fetch('http://localhost:3000/reports');
       if (response.ok) {
         const reports = await response.json();
         reports.forEach(report => {
@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Delete a report
   window.deleteReport = async function (reportId) {
     try {
-      const response = await fetch(`/report/${reportId}`, {
+      const response = await fetch(`http://localhost:3000/report/${reportId}`, {
         method: 'DELETE'
       });
 
