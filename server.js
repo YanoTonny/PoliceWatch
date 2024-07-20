@@ -48,6 +48,14 @@ const reportSchema = new mongoose.Schema({
   location: String,
   file: String,
   userId: mongoose.Schema.Types.ObjectId,
+  createdAt: { type: Date, default: Date.now },
+  updatedAt: { type: Date, default: Date.now }
+});
+
+// Update the `updatedAt` field on every update
+reportSchema.pre('save', function (next) {
+  this.updatedAt = Date.now();
+  next();
 });
 
 const User = mongoose.model('User', userSchema);
@@ -120,8 +128,32 @@ app.get('/reports', async (req, res) => {
 });
 
 app.delete('/report/:id', async (req, res) => {
+  const reportId = req.params.id;
+  const userId = req.user?.id; // Get user ID from JWT token if authenticated
+  
+  console.log('Delete request for report:', reportId, 'by user:', userId);
+
   try {
+    const report = await Report.findById(reportId);
+    if (!report) {
+      // Report not found
+      return res.status(404).send('Report not found');
+    }
+
+    const userId = req.body.userId;
+
+    if (!userId) {
+      return res.status(400).send('User ID is required');
+    }
+
+    // Check if the report belongs to the current user
+    if (report.userId.toString() !== userId.toString()) {
+      return res.status(403).send('Forbidden: You are not authorized to delete this report');
+    }
+
+  // Delete the report
     await Report.findByIdAndDelete(req.params.id);
+    console.log('Report deleted successfully:', req.params.id);
     res.status(200).send('Report deleted');
   } catch (error) {
     console.error('Error deleting report:', error);
