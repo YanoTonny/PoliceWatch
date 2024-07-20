@@ -1,12 +1,12 @@
 ---
 
-# PoliceWatch
+PoliceWatch
 
-## Overview
+Overview
 
 **PoliceWatch** is a web application designed to enhance police accountability by providing a platform for users to report incidents related to police conduct. The application features user registration, login, incident reporting with file uploads, viewing submitted reports, and deleting reports. Built with Node.js, Express, and MongoDB, PoliceWatch aims to foster transparency and improve community safety.
 
-## Table of Contents
+** Table of Contents**
 
 - [Features](#features)
 - [Installation](#installation)
@@ -17,7 +17,7 @@
 - [Contributing](#contributing)
 - [License](#license)
 
-## Features
+**Features**
 
 - **User Authentication:** Register and log in users.
 - **Report Incidents:** Submit reports with description, location, and file uploads (e.g., images or videos).
@@ -25,7 +25,7 @@
 - **Delete Reports:** Users can delete their own reports.
 - **Call Ambulance:** Button functionality to call an ambulance service (to be implemented).
 
-## Installation
+**Installation**
 
 1. **Clone the Repository:**
 
@@ -57,13 +57,13 @@
    PORT=3000
    ```
 
-## Configuration
+ **Configuration**
 
 - **Multer:** Handles file uploads (e.g., images, videos).
 - **JWT (JSON Web Tokens):** Used for user authentication and authorization.
 - **Bcrypt:** Used for securely hashing user passwords.
 
-## Usage
+**Usage**
 
 1. **Start the Server:**
 
@@ -75,9 +75,9 @@
 
    Open `index.html` in your browser or use a live server extension in VSCode to serve the HTML file.
 
-## Routes
+**Routes**
 
-### Authentication
+**Authentication**
 
 - **POST /auth/register**
   
@@ -123,7 +123,7 @@
   }
   ```
 
-### Reports
+**Reports**
 
 - **POST /report**
 
@@ -153,7 +153,7 @@
 
   `Report deleted`
 
-## Technologies Used
+**Technologies Used**
 
 - **Frontend:** HTML, CSS, JavaScript
 - **Backend:** Node.js, Express
@@ -161,14 +161,14 @@
 - **Authentication:** JWT (JSON Web Tokens)
 - **File Uploads:** Multer
 
-## Contributing
+**Contributing**
 
 Contributions are welcome! To contribute:
 
 1. Open an issue or submit a pull request with your improvements or bug fixes.
 2. Follow the project's coding standards and best practices.
 
-## License
+**License**
 
 This project is licensed under the [MIT License](LICENSE). See the LICENSE file for more details.
 
