@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Handle call ambulance button click
   callAmbulanceButton.addEventListener('click', () => {
     alert('Calling ambulance service in Kenya...');
-    // Implement actual call functionality here
+    // **********Implementation of actual call functionality here**********
   });
 
   // Show main content after login/register
